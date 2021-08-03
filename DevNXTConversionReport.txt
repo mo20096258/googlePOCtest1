@@ -1,0 +1,164 @@
+		********* Conversion Report *********
+
+
+Source path: D:\WebHolmesConversion\MVCHolmesConversion\wwwroot\Source
+
+Destination path: D:\WebHolmesConversion\MVCHolmesConversion\wwwroot\Destination
+
+Project Code : Blazor
+
+	   ==============================================================     
+
+Copying Folder Structures to destination path
+
+Transfering css,js,fonts to wwwroot folder of destination framework
+
+Copying RouteConfigs in Startup.cs
+
+Creating new solution file for target framework i.e. ASP .Net Core 3.1 
+
+Adding devNXT project to new asp .net core solution file
+
+Setting App.config file for path :D:\WebHolmesConversion\MVCHolmesConversion\wwwroot\Destination\devNXT\devNXT.csproj
+
+Setting IHttpContextAccessor reference for Non Controller class: Program
+
+Configuring Session in Controller : Program
+
+Adding AspNetCore Namespace References to class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Setting IHttpContextAccessor reference for Non Controller class: Startup
+
+Configuring Session in Controller : Startup
+
+Adding AspNetCore Namespace References to class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Adding Http Annotations in Controller : HomeController
+
+Adding AspNetCore Namespace References to controller class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Changing ActionResult to IActionResult 
+
+Changing FormCollection to IFormCollection 
+
+Configuring Session in Controller : HomeController
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: ErrorViewModel
+
+Configuring Session in Controller : ErrorViewModel
+
+Adding AspNetCore Namespace References to class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Setting IHttpContextAccessor reference for Non Controller class: User
+
+Configuring Session in Controller : User
+
+Adding AspNetCore Namespace References to class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Setting IHttpContextAccessor reference for Non Controller class: UserProfile
+
+Configuring Session in Controller : UserProfile
+
+Adding AspNetCore Namespace References to class files i.e. Microsoft.AspNetCore.Http and Microsoft.AspNetCore.Mvc
+
+Setting IHttpContextAccessor reference for Non Controller class: AssemblyInfo
+
+Configuring Session in Controller : AssemblyInfo
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: .NETCoreApp,Version=v3.1.AssemblyAttributes
+
+Configuring Session in Controller : .NETCoreApp,Version=v3.1.AssemblyAttributes
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: SampleCore.AssemblyInfo
+
+Configuring Session in Controller : SampleCore.AssemblyInfo
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: SampleCore.RazorAssemblyInfo
+
+Configuring Session in Controller : SampleCore.RazorAssemblyInfo
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: SampleCore.RazorTargetAssemblyInfo
+
+Configuring Session in Controller : SampleCore.RazorTargetAssemblyInfo
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: _ViewImports.cshtml.g
+
+Configuring Session in Controller : _ViewImports.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: _ViewStart.cshtml.g
+
+Configuring Session in Controller : _ViewStart.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: Index.cshtml.g
+
+Configuring Session in Controller : Index.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: Privacy.cshtml.g
+
+Configuring Session in Controller : Privacy.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: Error.cshtml.g
+
+Configuring Session in Controller : Error.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: _Layout.cshtml.g
+
+Configuring Session in Controller : _Layout.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+Setting IHttpContextAccessor reference for Non Controller class: _ValidationScriptsPartial.cshtml.g
+
+Configuring Session in Controller : _ValidationScriptsPartial.cshtml.g
+
+Error occured while executing SessionOutsideController() Line-1006 , ConversionCode.cs,Detailed error-   at devNXTCodeConversionTool.ConversionCode.SessionConversion(String[] lines, Boolean isControllerFile, String className) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1599
+   at devNXTCodeConversionTool.ConversionCode.Readfiles(String filePath, String routetempvalue) in D:\WebHolmesConversion\MVCHolmesConversion\ConversionCode.cs:line 1034
+
+String cannot be of zero length. (Parameter 'oldValue')
+String cannot be of zero length. (Parameter 'oldValue')
+
+
+Converted Successfully ! Please check for the project in the path D:\WebHolmesConversion\MVCHolmesConversion\wwwroot\Destination
+
+		==============================================================     
+
+
+
+			   DevNXT Conversion Tool   
+
+
+

@@ -1,0 +1,339 @@
+@model IEnumerable<devNXT.Models.User>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+       
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+            table.dataTable tbody tr:nth-child(even) {
+                background-color: #F5F5F5;
+            }
+
+        th {
+            background-color: #2F81FF;
+            color: white;
+        }
+
+        td {
+            color: grey;
+        }
+
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid mt-5">
+        <!--<div class="row ">
+            <h3 class="col-md-3" style="color:black;padding:0px">User Details</h3>-->
+            @*<div class="col-md-offset-7 col-md-2 p-0">
+                <a href="@Url.Action("AddNewUser", "Admin")" class="btn btn-primary" style="float:right;background-color:#2F81FF;border-color:#2F81FF">
+                    Add
+                    New User
+                </a>
+            </div>*@
+        <!--</div>-->
+        @if(Model.Count()>0)
+            {
+
+          
+        <div class="row" @*style="overflow-x:scroll;"*@>
+            <table id="table_id22">
+                <thead>
+                    <tr>
+                       
+                        <th class="col">First Name</th>
+                        <th class="col">Last Name</th>
+                        <th class="col">Email Address</th>                       
+                        <th class="col">Project Name</th>
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                          
+                            <td class="col">@item.FirstName</td>
+                            <td class="col">@item.LastName</td>
+                            <td class="col">@item.EmailId</td>
+                            <td class="col">@item.ProjectName</td>
+                     
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        }
+    </div>
+
+    <script type="text/javascript">
+        function GetProject(Id) {
+            var ddldivision = $("#Role_" + Id).find("#ddldivision_" + Id).val();
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetModule", "User")',
+                data: { 'Id': ddlapplication },
+                dataType: "json",
+                success: function (Result) {
+                    $("#Role_" + Id).find("#ddlModule1_" + Id).empty();
+                    $("#Role_" + Id).find("#ddlModule1_" + Id).append($("<option></option>").val(0).html("Select Module"));
+                    $.each(Result, function (key, value) {
+                        $("#Role_" + Id).find("#ddlModule1_" + Id).append($("<option></option>").val(value.id).html(value.names));
+                    });
+                    $("#Role_" + Id).find("#ddlModule1_" + Id).attr('multiple', 'multiple');
+                    //$("#Role_" + Id).find("#ddlModule1_" + Id).attr('data-live-search', 'true');
+                    //$("#Role_" + Id).find("#ddlModule1_" + Id).addClass('selectpicker input-large').selectpicker('refresh');
+                },
+                failure: function () {
+                    swal("Failed!");
+                }
+            });
+        }
+    </script>
+    <script>
+        function EditRoleInfo(Id) {
+            var chkadmin = document.getElementById("Admin_" + Id);
+            var chkKM = document.getElementById("KM_" + Id);
+            var chkuser = document.getElementById("User_" + Id);
+            var chksme = document.getElementById("SME_" + Id);
+            var adminchecked = "Unchecked";
+            var kmchecked = "Unchecked";
+            var userchecked = "Unchecked";
+            var smechecked = "Unchecked";
+            var Roles = "";
+            //var Application = $("#Role_" + Id).find("#ddlApplication_" + Id).val();
+
+            //var Module = "";
+
+            //$("#Role_" + Id).find("#ddlModule1_" + Id+" :selected").each(function (i, value) {
+            //    if (Module == "")
+            //        Module = $(value).val();
+            //    else
+            //        Module = Module + "," + $(value).val();
+            //});
+
+            var validation = true;
+            if (chkadmin.checked == true) {
+                adminchecked = "checked";
+                Roles = "Admin";
+
+            }
+            if (chkKM.checked == true) {
+                kmchecked = "checked";
+                if (Roles != "")
+                    Roles = Roles + "," + "Knowledge Manager";
+                else
+                    Roles = "Knowledge Manager";
+
+            }
+            if (chkuser.checked == true) {
+                userchecked = "checked";
+                if (Roles != "")
+                    Roles = Roles + "," + "User";
+                else
+                    Roles = "User";
+
+            }
+            if (chksme.checked == true) {
+                smechecked = "checked";
+                if (Roles != "")
+                    Roles = Roles + "," + "SME";
+                else
+                    Roles = "SME";
+
+
+            }
+
+            if (adminchecked == "Unchecked" && kmchecked == "Unchecked" && userchecked == "Unchecked" && smechecked == "Unchecked") {
+               swal("Please check at least one checkbox");
+                validation = false;
+            }
+
+
+            if (validation) {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("EditRoleInfo", "Admin")",
+                    data: { 'id': Id, 'Roles': Roles, 'Application': "", 'Module': "" },
+                    success: function (res) {
+                       swal(res);
+
+                        var url = '@Url.Action("CreateUser", "Admin")';
+                        window.location.href = url;
+
+                    },
+                    error: function () {
+                        swal("Error occured!!");
+                    }
+                });
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('#table_id').DataTable();
+        });
+        $('#table_id').DataTable({
+            //"pageLength": 2,
+            "scrollY": true,
+            "scrollX": true
+
+        });
+        $('select').selectpicker();
+
+    </script>
+    <script type="text/javascript">
+        function edit(Id, ProjectId, Geography, ProductSpeciality, ProcessSpeciality, ModuleSpeciality, ProjectExper,
+            FirstName, LastName, EmailId, Contactsdetails, ADId, DId) {
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UserEdit","Admin")",
+                data: {
+                    'Id': Id,
+                    'ProjectId': ProjectId, 'Geography': Geography, 'ProductSpeciality': ProductSpeciality,
+                    'ProcessSpeciality': ProcessSpeciality, 'ModuleSpeciality': ModuleSpeciality, 'ProjectExper': ProjectExper
+                    , 'FirstName': FirstName, 'LastName': LastName, 'EmailId': EmailId, 'Contactsdetails': Contactsdetails,
+                    'ADId': ADId, 'DId': DId
+                },
+                success: function (res) {
+                    window.location.href = '@Url.Action("EditUser", "Admin")';
+                },
+                failure: function (res) {
+                   swal("failed");
+                },
+                error: function (res) {
+                   swal("Error");
+                }
+            });
+
+        }
+
+
+    </script>
+    <script type="text/javascript">
+        function Delete(UserId) {
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteUser","Admin")",
+                data: {
+                    'UserId': UserId
+                },
+                success: function (res) {
+                    if (res != 0) {
+                        swal("Deleted Successfully");
+                        window.location.href = '@Url.Action("CreateUser", "Admin")';
+                    }
+
+                },
+                failure: function (res) {
+                  swal("failed");
+                },
+                error: function (res) {
+                  swal("Error");
+                }
+            });
+
+        }
+
+
+    </script>
+    <script type="text/javascript">
+        function Save(UserId) {
+            var drstatus = $('#access' + UserId).val();
+            if (drstatus > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SaveUserStatus","Admin")",
+                    data: {
+                        'Id': UserId, 'ApprovalStatus': drstatus
+                    },
+                    success: function (res) {
+                        if (res == 1) {
+                            swal("Approved Successfully", "", "success");
+
+                        }
+                        else if (res == 2) {
+                            swal("Rejected Successfully");
+
+                        }
+                        window.location.href = '@Url.Action("User", "Admin")';
+                    },
+                    failure: function (res) {
+                       swal("failed");
+                    },
+                    error: function (res) {
+                       swal("Error");
+                    }
+                });
+
+            }
+            else {
+              swal("select  status");
+            }
+
+        }
+
+
+    </script>
+    <script>
+
+        //".chk" change
+        $('.chk').change(function () {
+
+            //uncheck "select all", if one of the listed checkbox item is unchecked
+            if (false == $(this).prop("checked")) {//if this item is unchecked
+
+                var id = $(this).attr('id');
+
+                $("#" + id).prop('checked', false);
+                var test = id.split('_');
+                if (test[0] == "SME") {
+                    $("#Role_" + test[1]).find("#divSME_" + test[1]).hide();
+                }
+            }
+            else if (true == $(this).prop("checked")) {
+                var id = $(this).attr('id');
+
+                var test = id.split('_');
+                $("#" + id).prop('checked', true);
+                if (test[0] == "SME") {
+
+                    $("#Role_" + test[1]).find("#divSME_" + test[1]).show();
+
+                }
+
+            }
+
+        });
+    </script>
+</body>
+
+</html>
