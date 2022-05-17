@@ -42,6 +42,7 @@ namespace devNXT.Controllers
         {
 
             // var s = cbe.GetCBLoginInfo(model.UserName, model.Password);
+	    //test
             string item = string.Empty;
             if (model.UserName == "admin" && model.Password == "admin")
                 item = "Success";
