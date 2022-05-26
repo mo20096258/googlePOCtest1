@@ -19,3 +19,4 @@ WORKDIR /app
 COPY --from=build /app ./
 # ENV PORT 80
 ENTRYPOINT ["dotnet", "devNXT.dll"]
+EXPOSE 80/tcp
