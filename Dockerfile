@@ -17,6 +17,5 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
 COPY --from=build /app ./
-# ENV PORT 80
 ENTRYPOINT ["dotnet", "devNXT.dll"]
-EXPOSE 80/tcp
+EXPOSE 8080/tcp
