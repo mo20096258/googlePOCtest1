@@ -47,7 +47,7 @@ name: Build and Deploy to Cloud Run
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   PROJECT_ID: anil-dev # TODO: update Google Cloud project id
