@@ -40,6 +40,7 @@ namespace devNXT.Controllers
         [HttpPost]
         public IActionResult Index(UserProfile model)
         {
+	//test
 
             // var s = cbe.GetCBLoginInfo(model.UserName, model.Password);
 	    //test
